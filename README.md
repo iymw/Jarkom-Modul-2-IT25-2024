@@ -936,7 +936,7 @@ Markas pusat meminta laporan hasil benchmark dengan menggunakan apache benchmark
 ab -n 10 -c 2 http://10.76.2.4/
 ```
 
-#### Apache2
+### Apache2
 
 **Round Robin (Default)**
 
@@ -989,7 +989,7 @@ Percentage of the requests served within a certain time (ms)
 ```
 
 
-#### Nginx
+### Nginx
 
 **Round Robin (Default)**
 ```
