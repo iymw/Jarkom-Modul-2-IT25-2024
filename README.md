@@ -924,10 +924,10 @@ service nginx start
 ## Soal 15
 Markas pusat meminta laporan hasil benchmark dengan menggunakan apache benchmark dari load balancer dengan 2 web server yang berbeda tersebut dan meminta secara detail dengan ketentuan:
 <ol type="a">
-  <li>a. Nama Algoritma Load Balancer</li>
-  <li>b. Report hasil testing apache benchmark</li>
-  <li>c. Grafik request per second untuk masing masing algoritma.</li>
-  <li>d. Analisis</li>
+  <li>Nama Algoritma Load Balancer</li>
+  <li>Report hasil testing apache benchmark</li>
+  <li>Grafik request per second untuk masing masing algoritma.</li>
+  <li>Analisis</li>
 </ol>
 
 **Client (Zharki, Yasnaya Polyana, dan Primorsk)**
