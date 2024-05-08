@@ -923,16 +923,74 @@ service nginx start
 
 ## Soal 15
 Markas pusat meminta laporan hasil benchmark dengan menggunakan apache benchmark dari load balancer dengan 2 web server yang berbeda tersebut dan meminta secara detail dengan ketentuan:
-a. Nama Algoritma Load Balancer
-b. Report hasil testing apache benchmark 
-c. Grafik request per second untuk masing masing algoritma. 
-d. Analisis
+<ol type="a">
+  <li>a. Nama Algoritma Load Balancer</li>
+  <li>b. Report hasil testing apache benchmark</li>
+  <li>c. Grafik request per second untuk masing masing algoritma.</li>
+  <li>d. Analisis</li>
+</ol>
 
 **Client (Zharki, Yasnaya Polyana, dan Primorsk)**
 
 ```
 ab -n 10 -c 2 http://10.76.2.4/
 ```
+
+#### Apache2
+
+**Round Robin (Default)**
+
+```
+root@Zharki:~# ab -n 10 -c 2 http://10.76.2.4:8080/
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 10.76.2.4 (be patient).....done
+
+
+Server Software:        Apache/2.4.18
+Server Hostname:        10.76.2.4
+Server Port:            8080
+
+Document Path:          /
+Document Length:        166 bytes
+
+Concurrency Level:      2
+Time taken for tests:   0.044 seconds
+Complete requests:      10
+Failed requests:        0
+Total transferred:      3570 bytes
+HTML transferred:       1660 bytes
+Requests per second:    225.31 [#/sec] (mean)
+Time per request:       8.877 [ms] (mean)
+Time per request:       4.438 [ms] (mean, across all concurrent requests)
+Transfer rate:          78.55 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   0.7      0       2
+Processing:     1    8   6.2      8      23
+Waiting:        1    8   6.2      8      23
+Total:          1    9   6.3      9      23
+WARNING: The median and mean for the initial connection time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%      9
+  66%     10
+  75%     12
+  80%     12
+  90%     23
+  95%     23
+  98%     23
+  99%     23
+ 100%     23 (longest request)
+```
+
+
+#### Nginx
+
 **Round Robin (Default)**
 ```
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
